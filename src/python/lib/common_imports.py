@@ -13,8 +13,12 @@ import xgboost
 import sys
 
 import warnings
-warnings.filterwarnings('ignore')
-
 # Input data files are available in the "../input/" directory.
 # For example, running this (by clicking run or pressing Shift+Enter) will list the files in the input directory
 import os
+
+warnings.filterwarnings('ignore')
+pd.set_option('display.height', 1000)
+pd.set_option('display.max_rows', 500)
+pd.set_option('display.max_columns', 500)
+pd.set_option('display.width', 1000)

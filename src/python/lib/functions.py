@@ -6,16 +6,17 @@ def load_data():
     return raw_train, raw_test
 
 
-# this function takes dataframe  and  class to be predicted, and plots all columns 
-def graph_all_columns(data, class_name):
-    cols=data.columns
+# this function takes dataframe  and  class to be predicted, and plots all columns
+def graph_all_columns(train_data, class_name):
+    cols=train_data.columns
+    print("All columns",cols)
     for col in cols:
-        distinct_values = len(data[col].unique())
+        if col is class_name: continue #ommiting class itself
+        distinct_values = len(train_data[col].unique())
         print("Distinct Values for ",col, ' are :',distinct_values)
         if distinct_values < 10:
             function=sns.barplot
         else:
             function=sns.lineplot
-        function(x= col , y=class_name, data=data)
+        function(x= col, y=class_name, data=train_data)
         plt.show()
-    

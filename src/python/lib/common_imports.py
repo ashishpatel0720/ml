@@ -11,14 +11,17 @@ from sklearn.model_selection import cross_val_score,GridSearchCV
 from sklearn import ensemble
 import xgboost
 import sys
-
 import warnings
 # Input data files are available in the "../input/" directory.
 # For example, running this (by clicking run or pressing Shift+Enter) will list the files in the input directory
 import os
 
 warnings.filterwarnings('ignore')
-pd.set_option('display.height', 1000)
-pd.set_option('display.max_rows', 500)
-pd.set_option('display.max_columns', 500)
-pd.set_option('display.width', 1000)
+pd.set_option('display.max_rows', None)
+pd.set_option('display.max_columns', None)
+pd.set_option('display.width', None)
+pd.set_option('display.max_colwidth', -1)
+
+# just to show files in data folder
+import os
+print(os.listdir("../data")) # this will list files in input directory

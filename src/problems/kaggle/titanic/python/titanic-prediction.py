@@ -151,7 +151,7 @@ sns.barplot(x='TicketGroup', y='Survived', data=data); st.pyplot()
 st.write("> Age")
 show_col(data,'Age')
 
-st.write("#### we don't have aget of some people and its very important attribute, so predicting using other attributes")
+st.write("#### we don't have age of some people and its very important attribute, so predicting using other attributes")
 
 age_df = data[['Age', 'Pclass','Sex','Title','Fsize']]
 
@@ -214,8 +214,9 @@ clf =model.fit(X_train,y_train)
 predictions = model.predict(test)
 submission = pd.DataFrame({"PassengerId": raw_test["PassengerId"],
                            "Survived": predictions.astype(np.int32)})
-outputFile = "../output/output2.csv"
-submission.to_csv("../output/output.csv", index=False)
+
+outputFile = "../output/output.csv"
+submission.to_csv(outputFile, index=False)
 
 'File written:', outputFile
 

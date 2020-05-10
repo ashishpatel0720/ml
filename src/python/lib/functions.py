@@ -20,3 +20,7 @@ def graph_all_columns(train_data, class_name):
             function=sns.lineplot
         function(x= col, y=class_name, data=train_data)
         plt.show()
+
+def showColInfo(df, colName):
+    print("Null Values : ", df[colName].isnull().sum())
+    print("Value Counts:\n",df[colName].value_counts())

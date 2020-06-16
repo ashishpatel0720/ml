@@ -21,7 +21,3 @@ pd.set_option('display.max_rows', None)
 pd.set_option('display.max_columns', None)
 pd.set_option('display.width', None)
 pd.set_option('display.max_colwidth', -1)
-
-# just to show files in data folder
-import os
-print(os.listdir("../data")) # this will list files in input directory

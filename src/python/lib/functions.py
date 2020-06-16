@@ -24,3 +24,8 @@ def graph_all_columns(train_data, class_name):
 def showColInfo(df, colName):
     print("Null Values : ", df[colName].isnull().sum())
     print("Value Counts:\n",df[colName].value_counts())
+
+def showDFInfo(df):
+    plt.figure(figsize=(20,10))
+    # this shows null values in each column of a dataframe through a heatmap ( black tick means null values)
+    sns.heatmap(df.isnull(),yticklabels=False,cbar=False,cmap='YlGnBu')
